@@ -62,6 +62,8 @@ DELETE | /api/v1/parties/:id  | *Delete a specific political party by id*
 DELETE | /api/v1/parcels/:id  | *Delete a user by id*
 
 ### Optional Endpoints
+HTTP METHOD | ENDPOINTS | FUNCTIONALITY
+--- | --- | ---
 POST | /api/v1/auth/reset   | *Reset a user account password*
 POST | /api/v1/petitions   | *Create a petition challenging the result of a concluded election*
 ### How to run unit tests
