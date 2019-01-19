@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta name="description" content="Online Voting Sytem">
+  <title>Politico | Welcome</title>
+  <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+        <div class="nav">
+                <div class="nav-header">
+                  <div class="nav-title">
+                    <a href="index.html">Politico</a>
+                  </div>
+                </div>
+                <div class="nav-btn">
+                  <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </label>
+                </div>
+                <input type="checkbox" id="nav-check">
+                <div class="nav-links">
+                  <a href="index.html">Home</a>
+                  <a href="userProfile.html">Profile</a>
+                  <a href="createParty.html">Election Results</a>
+                  <a href="allParties.html">View Parties</a>
+                  <a href="settings.html" >Settings</a>
+                </div>
+              </div>
+              
+              <section id="register">
+                <div class="formregister">
+                    <form class="signup" autocomplete="on">
+                        <h2 id="signupheader">Register Political Party</h2>
+                        <div>
+                            <label>Party Name:</label><br>
+                            <input type="text" placeholder="Party Name" 
+                            maxlength="100"
+                            required>
+                        </div>
+                        <div>
+                            <label>Party Acronym:</label><br>
+                            <input type="text" placeholder="Party Acronym" maxlength="10">
+                        </div>
+                        <div>
+                            <label>Headquater Address:</label><br>
+                            <input type="text" placeholder="Address"
+                            maxlength="60">                        
+                        </div>
+                        <div>
+                            <label>Party Email:</label><br>
+                            <input type="email" placeholder="email"
+                            maxlength="15">
+                        </div>
+                        <div>
+                            <label>Upload Party Logo:</label><br>
+                            <input type="file" name="pic">
+                        </div>
+                        <div>
+                            <button class="button_1" onclick="location.href='allParties.html'" type="button">Register Party</button>
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+              </section>
+              <footer>
+                    <div class="container">
+                    <p>Politico, Copyright &copy; 2018. <a href="#">About Us</a></p>
+                  </div>
+                  </footer>
+  
+</body>
+</html>
