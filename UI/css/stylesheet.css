@@ -163,6 +163,36 @@ input{
     font-weight: bold;
     color:white;
   }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  .res {
+    overflow-x: auto;
+    margin-top: 50px;
+    width: 80%;
+    margin: auto;
+    background: rgb(204, 212, 240);
+    font-weight: normal;
+    color: blue;
+  }
+  .party-logo{
+    width: 100px;
+    height: 100px;
+  }
+  
+  tr:nth-child(even){
+    background-color: #f4f6fa;
+  }
+  
   
   @media (max-width:600px) {
     .nav > .nav-btn {
