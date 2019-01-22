@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta name="description" content="Online Voting Sytem">
   <title>Politico | Welcome</title>
+  <link rel="icon" href="images/votelogo2.png" type="image/gif" sizes="16x16">
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
@@ -24,10 +25,11 @@
                 <input type="checkbox" id="nav-check">
                 <div class="nav-links">
                   <a href="index.html">Home</a>
-                  <a href="userProfile.html">Profile</a>
+                  <a href="createParty.html">Create Party</a>
+                  <a href="createOffice.html">Create Office</a>
                   <a href="createParty.html">Election Results</a>
-                  <a href="allParties.html">View Parties</a>
-                  <a href="settings.html" >Settings</a>
+                  <a href="adminAllParties.html">View Parties</a>
+                  <a href="index.html" >LogOut</a>
                 </div>
               </div>
               
@@ -36,10 +38,13 @@
                     <form class="signup" autocomplete="on">
                         <h2 id="signupheader">Create Political Office</h2>
                         <div>
-                            <label>Office type:</label><br>
-                            <input type="text" placeholder="federal, state or LGA" 
-                            maxlength="100"
-                            required>
+                            <label>Office type:</label>
+                            <select name="" id="">
+                              <option value="">Fedral</option>
+                              <option value="">Legistlative</option>
+                              <option value="">State</option>
+                              <option value="">Local Government</option>
+                            </select>
                         </div>
                         <div>
                             <label>Name of Office:</label><br>
