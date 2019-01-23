@@ -1,0 +1,43 @@
+{
+  "name": "politico",
+  "version": "1.0.0",
+  "description": "An online voting application",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node app.js",
+    "start-dev": "nodemon --exec babel-node app.js",
+    "test": "set NODE_ENV=test nyc mocha ./server/test --timeout 10s --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kayroy247/Politico.git"
+  },
+  "keywords": [
+    "Politico",
+    "vote",
+    "election",
+    "polls"
+  ],
+  "author": "Okunlade Kayode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kayroy247/Politico/issues"
+  },
+  "homepage": "https://github.com/kayroy247/Politico#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "nodemon": "^1.18.9"
+  }
+}
