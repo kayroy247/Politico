@@ -24,7 +24,11 @@
   }
   div.card{
     margin-top:50px;
+    height:350px;
     
+  }
+  div#longercard{
+    height:450px;
   }
   div.card > img{
     width:50%;
@@ -38,8 +42,9 @@
     background-color: rgb(82, 97, 235);
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 80%;
     font-size: 18px;
+    border-radius: 5px;
   }
   select {
     float: left;
@@ -281,6 +286,10 @@ input{
   td > a{
     text-decoration: none;
     color: rgb(38, 41, 218);
+  }
+  div.voteButton{
+    width: 200px;
+    float:right;
   }
 
   
