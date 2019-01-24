@@ -10,12 +10,25 @@
     font-family: arial;
     background: white;
     color:rgb(68, 68, 221);
+    border-radius: 20px;
+    
     
   }
-  
+
+  #officename{
+    margin-top: 20px;
+  }
+  div#space{
+    margin-bottom:10px;
+    height:40px;
+  }
   div.card{
     margin-top:50px;
-    border-radius: 10px;
+    
+  }
+  div.card > img{
+    width:50%;
+   
   }
   .card button {
     border: none;
@@ -31,6 +44,10 @@
   select {
     float: left;
     margin-left: 10px;
+    margin-top: 0px;
+    width: 278px;
+    height: 30px;
+    border-radius: 4px;
   }
   div.formregister{
     margin-top: 30px;
@@ -49,6 +66,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
   }
 
   div#topic.container > h1 {
@@ -83,7 +101,9 @@
     font-weight: bold;
     color: rgb(87, 217, 240);
   }
-  
+  select#makechange{
+    margin-left:4px;
+  }
   .nav > .nav-btn {
     display: none;
   }
@@ -174,7 +194,10 @@ p a{
   overflow:hidden;
   background: rgba(22, 41, 146, 0.5);
   padding-bottom:30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+}
+div.formregister{
+  margin-top: 70px;
 }
 input{
   width: 90%;
@@ -255,9 +278,28 @@ input{
     
   }
 
+  td > a{
+    text-decoration: none;
+    color: rgb(38, 41, 218);
+  }
+
   
   
   @media (max-width:600px) {
+    
+
+    .formregister{
+      float:none;
+      width:80%;
+      margin:auto;
+    }
+  }
+  @media (max-width:800px) {
+    .formregister{
+      float:none;
+      width:60%;
+      margin:auto;
+    }
     .nav > .nav-btn {
       display: inline-block;
       position: absolute;
@@ -303,19 +345,6 @@ input{
       overflow-y: auto;
     }
 
-    .formregister{
-      float:none;
-      width:80%;
-      margin:auto;
-    }
-  }
-  @media (max-width:800px) {
-    .formregister{
-      float:none;
-      width:60%;
-      margin:auto;
-    }
-
   }
 
   @media (max-width:1100px) {
@@ -324,7 +353,11 @@ input{
       width:60%;
       margin:auto;
     }
-
+    select {
+    
+      width: 275px;
+      
+    }
   }
   @media (max-width:500px) {
     .formregister{
@@ -333,5 +366,24 @@ input{
       margin:auto;
     }
 
+    div.card > img{
+      width:60%;
+     
+    }
+   .card{
+     width:80%;
+     height: 80%;
+   }
+   select {
+    
+    width: 170px;
+    
   }
+  }
+  @media (max-width:1100px) and (min-width:700) {
+    div#topic.container > h1{
+      margin-top: 250px;
+    }
+    
 
+  }

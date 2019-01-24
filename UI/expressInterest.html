@@ -26,7 +26,7 @@
                 <div class="nav-links">
                   <a href="index.html">Home</a>
                   <a href="userProfile.html">Profile</a>
-                  <a href="createParty.html">Election Results</a>
+                  <a href="electionResults.html">Election Results</a>
                   <a href="allParties.html">View Parties</a>
                   <a href="settings.html" >Settings</a>
                 </div>
@@ -36,21 +36,35 @@
                 <div class="formregister">
                     <form class="signup" autocomplete="on">
                         <h2 id="signupheader">Express Interest To Run for An Office</h2>
-                        <div>
-                            <label>Office Of Interest:</label><br>
-                            <input type="text" placeholder="federal, state or LGA" 
-                            maxlength="100"
-                            required>
+                        <div id="space">
+                            <label>Type:</label>
+                            <select name="" id="">
+                              <option value="">Select One</option>
+                              <option value="">Federal</option>
+                              <option value="">State</option>
+                              <option value="">Local Government</option>
+                            </select>
                         </div>
-                        <div>
-                            <label>Name of Office:</label><br>
-                            <input type="text" placeholder="Presidential, senatorial etc" maxlength="100">
+                        <div id="space">
+                            <label>Name:</label>
+                            <select name="" id="makechange">
+                              <option value="">Select One</option>
+                              <option value="">Presidential</option>
+                              <option value="">Senatorial</option>
+                              <option value="">Governorship</option>
+                              <option value="">LG Chairman</option>
+                            </select>
                         </div>
-                        <div>
-                                <label>Party:</label><br>
-                                <input type="text" placeholder="APC, PDP, etc"
-                                maxlength="100">                        
-                            </div>
+                        <div id="space">
+                            <label>Party:</label>
+                            <select name="" id="">
+                              <option value="">Select One</option>
+                              <option value="">Action Progressive Congress</option>
+                              <option value="">People's Democratic Party</option>
+                              <option value="">Labour Party</option>
+                              <option value="">Action Aliance</option>
+                            </select>
+                        </div>
                         <div>
                             <label>Location:</label><br>
                             <input type="text" placeholder="Nigeria, Lagos, etc"
@@ -58,7 +72,7 @@
                         </div>
                         
                         <div>
-                            <button class="button_1" onclick="location.href='allParties.html'" type="button">Submit</button>
+                            <button class="button_1" onclick="location.href='userProfile.html'" type="button">Submit</button>
                             
                         </div>
                         
