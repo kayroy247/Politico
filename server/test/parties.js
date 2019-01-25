@@ -35,7 +35,7 @@ describe('GET /api/v1/parties/1', () => {
 });
 
 describe('PATCH /api/v1/parties/1/name', () => {
-  it('Should return error message is empty', (done) => {
+  it('Should edit a political party name by ID', (done) => {
     httpRequest
       .patch('/api/v1/parties/1/Action Alliance')
       .end((err, res) => {
@@ -67,7 +67,7 @@ describe('POST /api/v1/parties', () => {
 });
 
 describe('DELETE /api/v1/parties/2', () => {
-  it('Should delete the specific parcel delivery order by ID', (done) => {
+  it('Should delete the specific political party', (done) => {
     httpRequest
       .delete('/api/v1/parties/2')
       .end((err, res) => {
