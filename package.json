@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node app.js",
     "start-dev": "nodemon --exec babel-node app.js",
-    "test": "set NODE_ENV=test nyc mocha ./server/test --timeout 10s --exit"
+    "test": "nyc mocha ./server/test --timeout 10s --exit"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,21 @@
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.15.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0"
+  },
+
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "text",
+      "html",
+      "lcov",
+      "lcovonly"
+    ],
+    "sourceMap": false,
+    "instrument": false
   }
 }
