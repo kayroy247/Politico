@@ -15,12 +15,17 @@
     
   }
 
+  div > select{
+    width: 66%;
+  }
+
   #officename{
     margin-top: 20px;
   }
   div#space{
     margin-bottom:10px;
     height:40px;
+    
   }
   div.card{
     margin-top:50px;
@@ -108,6 +113,7 @@
   }
   select#makechange{
     margin-left:4px;
+    
   }
   .nav > .nav-btn {
     display: none;
@@ -215,7 +221,7 @@ input{
   border: 1px solid #24504f;
 }
 .button_1{
-  width:93%;
+  width:90%;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -383,10 +389,8 @@ input{
      width:80%;
      height: 80%;
    }
-   select {
-    
-    width: 170px;
-    
+  div>select{
+    width: 60%;
   }
   }
   @media (max-width:1100px) and (min-width:700) {
