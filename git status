@@ -1,0 +1,312 @@
+[33mcommit 356cb656439565174260b5a6e6cad69d15f5248d[m[33m ([m[1;36mHEAD -> [m[1;32mch-unit-tests-163408396[m[33m, [m[1;31morigin/ch-unit-tests-163408396[m[33m)[m
+Merge: 2ef3b66 8e92857
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 25 15:54:19 2019 +0100
+
+    chore(unit test): Add unit test
+
+[33mcommit 2ef3b66b6df479d1146dd988b648e2fbd6186231[m
+Merge: 0b34cb1 365e00c
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 25 15:43:44 2019 +0100
+
+    chore(unit test): Add unit test
+    
+    -write test for all endpoints
+
+[33mcommit 8e928571d8c301cc04e95feb691fc38b4333c1e6[m
+Merge: 0b34cb1 365e00c
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 25 15:43:44 2019 +0100
+
+    chore(unit test): Add unit test
+    
+    -write test for all endpoints
+
+[33mcommit 0b34cb1a152c1f77e1dec0aa73f8bb225c87299a[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 25 15:20:35 2019 +0100
+
+    chore(unit test): Add unit test
+    
+    -Add test for all endpoints
+    -Tests failed first in line with Test Driven Development
+    
+    Deliver #163408396
+
+[33mcommit 365e00cb2ffc4b3ee3c952e13723fdacb77163ef[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 25 15:20:35 2019 +0100
+
+    chore(unit test): Add unit test
+    
+    -Add test for all endpoints
+    -Tests failed first in line with Test Driven Development
+    
+    Deliver #163408396
+
+[33mcommit e574637c26fb873bf917ff57babd4cb7a2c91ba1[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Merge: b308c5d 14dbb21
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Fri Jan 25 10:58:36 2019 +0100
+
+    Merge pull request #21 from kayroy247/bg-Implement-feedback-163475667
+    
+    fix(UI template): implement LFA feedback
+
+[33mcommit 14dbb21b5c8d55814186e06fe0bc9e6aa9b50384[m[33m ([m[1;31morigin/bg-Implement-feedback-163475667[m[33m, [m[1;32mbg-Implement-feedback-163475667[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 25 10:55:47 2019 +0100
+
+    fix(UI template): implement LFA feedback
+    
+    -Implement LFA feedback
+    
+    Deliver #163475667
+
+[33mcommit b308c5d28a5c3a34e7d499776d019448ea3b4bf5[m
+Merge: b988e91 fe13f37
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Thu Jan 24 16:23:18 2019 +0100
+
+    Merge pull request #19 from kayroy247/bg-Implement-feedback-163453389
+    
+    bg(UI templates): Implement LFA feedback
+
+[33mcommit fe13f37196e37ffd5c5fd3b41d076514689c92c5[m[33m ([m[1;31morigin/bg-Implement-feedback-163453389[m[33m, [m[1;32mbg-Implement-feedback-163453389[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Thu Jan 24 16:12:28 2019 +0100
+
+    bg(UI templates): Implement LFA feedback
+    
+    -Adjust submit vote button
+    -Adjust user profile card
+    
+    Deliver #163453389
+
+[33mcommit b988e91ec7d11c5e0c495f0fbda23ae310b445a6[m
+Merge: 1cff371 8416ceb
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Thu Jan 24 13:54:02 2019 +0100
+
+    Merge pull request #18 from kayroy247/ch-setup-test-framework-163407872
+    
+    feat(UI template): setup test framework
+
+[33mcommit 8416cebf3c74f8afae4e96cb537cca0cc544e21b[m[33m ([m[1;31morigin/ch-setup-test-framework-163407872[m[33m, [m[1;32mch-setup-test-framework-163407872[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Thu Jan 24 13:48:41 2019 +0100
+
+    feat(UI template): setup test framework
+    
+    -installed mocha test framework
+    -installed chai assertion library
+    -installed chai-http
+    
+    Deliver #163407872
+
+[33mcommit 1cff37111cf72026c11c6be5af9866c6c145e9c2[m
+Merge: 150198b c08e051
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Thu Jan 24 12:17:23 2019 +0100
+
+    Merge pull request #16 from kayroy247/bg-feedback-implementation-163421039
+    
+    fix(UI templates): Implement LFA feedback
+
+[33mcommit c08e051c27e86dc3d121b07044be95b75c0b3d99[m[33m ([m[1;31morigin/bg-feedback-implementation-163421039[m[33m, [m[1;32mbg-feedback-implementation-163421039[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Thu Jan 24 12:08:28 2019 +0100
+
+    fix(UI templates): Implement LFA feedback
+    
+    -Implement all All LFA feedback
+    -Refactor Result page
+    
+    Deliver #163421039
+
+[33mcommit 150198b3febebe8ab072f3a2c1a8f5f1086c5b2d[m
+Merge: 443326f c0f662c
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Wed Jan 23 13:45:56 2019 +0100
+
+    Merge pull request #15 from kayroy247/ch-serverside-setup-163409729
+    
+    setup serverside framework
+
+[33mcommit c0f662c295fff9b8a01e4f311e2df2cda5c5044e[m[33m ([m[1;31morigin/ch-serverside-setup-163409729[m[33m, [m[1;32mch-serverside-setup-163409729[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Wed Jan 23 12:02:54 2019 +0100
+
+    chore(serverside): setup serverside framework
+
+[33mcommit 443326f6a12292bdde8de8e3d05ac55c2cf6e872[m
+Merge: 193115c e5bea8c
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Wed Jan 23 01:21:55 2019 +0100
+
+    Merge pull request #14 from kayroy247/ch-pull-request-template-163411334
+    
+    Add pull request template file
+
+[33mcommit e5bea8c5f5f9ecda9982521adf9eaa2fdf858470[m[33m ([m[1;31morigin/ch-pull-request-template-163411334[m[33m, [m[1;32mch-pull-request-template-163411334[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Wed Jan 23 01:19:12 2019 +0100
+
+    Add pull request template file
+
+[33mcommit 193115c199a4e257aca580eb658e1d31625224f7[m
+Merge: 93a7850 eb3e53b
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Tue Jan 22 22:11:30 2019 +0100
+
+    Merge pull request #12 from kayroy247/ch-feedback-implementation
+    
+    update userProfile page
+
+[33mcommit eb3e53b23072bd8db182c9b9f671484b6695651f[m[33m ([m[1;31morigin/ch-feedback-implementation[m[33m, [m[1;32mch-feedback-implementation[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Tue Jan 22 22:05:31 2019 +0100
+
+    update userProfile page
+
+[33mcommit 93a7850eeccd5dc7a1f97058549e245b5512a5ff[m
+Merge: 9124bc3 de46bba
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Tue Jan 22 15:40:29 2019 +0100
+
+    Merge pull request #10 from kayroy247/ch-feedback-implementation
+    
+    chore(UI template) Implement LFA feedback
+
+[33mcommit de46bba6dca493ca0b78b84f35b073330cd03714[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Tue Jan 22 15:37:08 2019 +0100
+
+    Implement LFA feedback
+
+[33mcommit 9124bc3e59d11a044f38d91e39771696ce0ab12c[m
+Merge: 51762e9 2e9ae62
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Mon Jan 21 15:01:57 2019 +0100
+
+    Merge pull request #8 from kayroy247/ft-allparties-page-163322467
+    
+    Update all party UI pages
+
+[33mcommit 2e9ae62182cc0487314b8727bcbcdaf48571e4bf[m[33m ([m[1;31morigin/ft-allparties-page-163322467[m[33m, [m[1;32mft-allparties-page-163322467[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Mon Jan 21 14:59:42 2019 +0100
+
+    Update all party UI pages
+
+[33mcommit 51762e94e1131376973904613a40b87cfa713b48[m
+Merge: e861192 836e3aa
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Mon Jan 21 13:16:38 2019 +0100
+
+    Merge pull request #7 from kayroy247/ft-all-Parties-Pages
+    
+    Add all parties page
+
+[33mcommit 836e3aabd9db797b5adb1705f7d873c43d074f5b[m[33m ([m[1;31morigin/ft-all-Parties-Pages[m[33m, [m[1;32mft-all-Parties-Pages[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Mon Jan 21 13:15:05 2019 +0100
+
+    Add all parties page
+
+[33mcommit e86119234807532e7c0802942f86dbc7c35a83dc[m[33m ([m[1;31morigin/gh-pages[m[33m, [m[1;32mgh-pages[m[33m)[m
+Merge: ed85ca7 08d0088
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Mon Jan 21 09:06:41 2019 +0100
+
+    Merge pull request #6 from kayroy247/ft-UI-pages
+    
+    Adds expressInterest page
+
+[33mcommit 08d00886ea251735bfb352815f4294c3ed8d8782[m[33m ([m[1;31morigin/ft-UI-pages[m[33m, [m[1;32mft-UI-pages[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Mon Jan 21 09:02:38 2019 +0100
+
+    Adds expressInterest page
+
+[33mcommit ed85ca79314682795b59f94c453831694c75fe71[m
+Merge: 091fb6f 9b0ec34
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Sat Jan 19 21:30:57 2019 +0100
+
+    Merge pull request #5 from kayroy247/ft-createParty-page-163326266
+    
+    Adds createOffice and createParty UI pages
+
+[33mcommit 9b0ec34e6879b1827519d0849827446b5a035a51[m[33m ([m[1;31morigin/ft-createParty-page-163326266[m[33m, [m[1;32mft-createParty-page-163326266[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Sat Jan 19 21:29:02 2019 +0100
+
+    Adds createOffice and createParty UI pages
+
+[33mcommit 091fb6ff77371434a547acbc6e1afbbe95fda866[m
+Merge: 14c8c35 12cb0ec
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Sat Jan 19 20:56:19 2019 +0100
+
+    Merge pull request #4 from kayroy247/ft-resetPassword-page-163322249
+    
+    Adds password reset page
+
+[33mcommit 12cb0ece07cb781f59f7b0b6dfe3f886f3fdac0c[m[33m ([m[1;31morigin/ft-resetPassword-page-163322249[m[33m, [m[1;32mft-resetPassword-page-163322249[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Sat Jan 19 20:50:10 2019 +0100
+
+    Add password reset page
+
+[33mcommit 14c8c356ea16cb69e023af6a41ef36039662d958[m
+Merge: dc8b68a 81185ef
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Sat Jan 19 20:33:26 2019 +0100
+
+    Merge pull request #3 from kayroy247/ft-UI-pages-163321524
+    
+    Adds Homepage, signup and Login Page
+
+[33mcommit 81185ef987741510cf13907ca04b85749dd2e4f9[m[33m ([m[1;31morigin/ft-UI-pages-163321524[m[33m, [m[1;32mft-UI-pages-163321524[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Sat Jan 19 20:20:32 2019 +0100
+
+    Add Homepage, signup and Login Page
+
+[33mcommit dc8b68ac4f7a34ddad7a9c4b0a4e3b465e1b0c38[m
+Merge: 3025963 67a5dcb
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Fri Jan 18 19:01:34 2019 +0100
+
+    Merge pull request #2 from kayroy247/ch-Update-Readme-163320972
+    
+    Update Readme file
+
+[33mcommit 67a5dcbf8dceeb80e1d5f8c757666b1f6088357a[m[33m ([m[1;31morigin/ch-Update-Readme-163320972[m[33m, [m[1;32mch-Update-Readme-163320972[m[33m)[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 18 18:57:40 2019 +0100
+
+    Update Readme file
+
+[33mcommit 3025963455892ef1bf7ec272093be3d3d0fec7d0[m
+Merge: f7841c4 6a5456d
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Fri Jan 18 18:54:31 2019 +0100
+
+    Merge pull request #1 from kayroy247/ch-Update-Readme-163320972
+    
+    Update Readme file
+
+[33mcommit 6a5456d41b2485a5d3f11d7680dea059dec73636[m
+Author: Kayode Okunlade <okunladekayode@gmail.com>
+Date:   Fri Jan 18 18:46:03 2019 +0100
+
+    Update Readme file
+
+[33mcommit f7841c4f24cac78858401c6dceb001e534fa8d15[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: kayroy247 <38121456+kayroy247@users.noreply.github.com>
+Date:   Fri Jan 18 16:47:31 2019 +0100
+
+    Initial commit

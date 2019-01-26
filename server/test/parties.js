@@ -36,8 +36,12 @@ describe('GET /api/v1/parties/1', () => {
 
 describe('PATCH /api/v1/parties/1/name', () => {
   it('Should edit a political party name by ID', (done) => {
+    const data = {
+      name: 'Action Party'
+    };
     httpRequest
-      .patch('/api/v1/parties/1/Action Alliance')
+      .patch('/api/v1/parties/1/name')
+      .send(data)
       .end((err, res) => {
         expect(res).to.have.status(400);
         expect(res.body).to.have.property('error');
