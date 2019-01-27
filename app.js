@@ -1,6 +1,7 @@
 import express from 'express';
 import morganLogger from 'morgan';
 import cors from 'cors';
+import apiVersion1 from './server/apiVersions/apiVersions';
 
 const app = express();
 
@@ -17,6 +18,9 @@ app.get('/', (req, res) => {
     message: 'Welcome to Politico Application'
   });
 });
+
+// api versioning
+app.use('/api/v1', apiVersion1);
 
 app.use((req, res) => {
   res.status(404).json({
