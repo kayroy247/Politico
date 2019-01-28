@@ -1,11 +1,9 @@
 import offices from '../models/offices';
-import validateCreateOffice from '../validators/inputValidator';
-
-
+import validator from '../validators/inputValidator';
 
 class OfficeController {
   static createOffice(req, res) {
-    const { error } = validateCreateOffice(req.body);
+    const { error } = validator.validateCreateOffice(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,
@@ -30,23 +28,23 @@ class OfficeController {
     const office = offices.find(element => element.officeId === parseInt(officeId, 10));
     if (!office) {
       return res.status(404).json({
-        success: false,
+        status: 404,
         error: 'The Office with the given Id does not exist'
       });
     }
     return res.status(200).json({
-      success: true,
-      message: 'Office successfully fetched by ID',
-      data: [office]
+      status: 200,
+      data: [office],
+      message: 'Office successfully fetched by ID'
     });
   }
 
   static getAllOffices(req, res) {
     const allOffices = offices;
     return res.status(200).json({
-      success: true,
-      message: 'All Offices Successfully Fetched',
-      data: allOffices
+      status: 200,
+      data: allOffices,
+      message: 'All Offices Successfully Fetched'
     });
   }
 }

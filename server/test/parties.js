@@ -37,8 +37,8 @@ describe('Test parties', () => {
       .patch('/api/v1/parties/1/name')
       .send(data)
       .end((err, res) => {
-        expect(res).to.have.status(400);
-        expect(res.body).to.have.property('error');
+        expect(res).to.have.status(200);
+        expect(res.body).to.have.property('data');
         expect(res.body).to.be.an('object');
       });
     done();
@@ -46,7 +46,8 @@ describe('Test parties', () => {
   it('Should Create a political party', (done) => {
     const data = {
       name: 'Action Alliance',
-      acronym: 'AA'
+      hqAddress: '345, Billing way, New City',
+      logoURL: 'http://aa.com'
     };
     httpRequest
       .post('/api/v1/parties')
@@ -65,7 +66,7 @@ describe('Test parties', () => {
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(res.body).to.have.property('message')
-          .to.be.equal('Political Party Successfully Deleted');
+          .to.be.equal('Party Successfully Deleted');
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('data');
         expect(res.body).to.have.property('status');
@@ -73,4 +74,3 @@ describe('Test parties', () => {
     done();
   });
 });
-
