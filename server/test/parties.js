@@ -6,7 +6,7 @@ import app from '../../app';
 use(chaiHttp);
 const httpRequest = request(app).keepOpen();
 
-describe('GET /api/v1/parties', () => {
+describe('Test parties', () => {
   it('Should return all parties', (done) => {
     httpRequest
       .get('/api/v1/parties')
@@ -18,9 +18,6 @@ describe('GET /api/v1/parties', () => {
       });
     done();
   });
-});
-
-describe('GET /api/v1/parties/1', () => {
   it('Should fetch One political party', (done) => {
     httpRequest
       .get('/api/v1/parties/1')
@@ -32,9 +29,6 @@ describe('GET /api/v1/parties/1', () => {
       });
     done();
   });
-});
-
-describe('PATCH /api/v1/parties/1/name', () => {
   it('Should edit a political party name by ID', (done) => {
     const data = {
       name: 'Action Party'
@@ -49,9 +43,6 @@ describe('PATCH /api/v1/parties/1/name', () => {
       });
     done();
   });
-});
-
-describe('POST /api/v1/parties', () => {
   it('Should Create a political party', (done) => {
     const data = {
       name: 'Action Alliance',
@@ -68,9 +59,6 @@ describe('POST /api/v1/parties', () => {
       });
     done();
   });
-});
-
-describe('DELETE /api/v1/parties/2', () => {
   it('Should delete the specific political party', (done) => {
     httpRequest
       .delete('/api/v1/parties/2')
@@ -85,3 +73,4 @@ describe('DELETE /api/v1/parties/2', () => {
     done();
   });
 });
+
