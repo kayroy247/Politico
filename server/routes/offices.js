@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import OfficeController from '../controllers/OfficeController';
-import checkId from '../middlewares/validateId';
+import idCheck from '../middlewares/validateId';
 
 const router = Router();
 
 router.get('/', OfficeController.getAllOffices);
-router.get('/:officeId', checkId, OfficeController.getOfficeById);
+router.get('/:officeId', idCheck.checkId, OfficeController.getOfficeById);
 router.post('/', OfficeController.createOffice);
 
 
