@@ -1,14 +1,20 @@
 import express from 'express';
 import morganLogger from 'morgan';
 import cors from 'cors';
+import multer from 'multer';
+import bodyParser from 'body-parser';
 import apiVersion1 from './server/apiVersions/apiVersions';
 
 const app = express();
+const upload = multer();
 
 app.set('port', process.env.PORT || 3000);
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(upload.fields([]));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
 app.use(morganLogger('combined'));
 
 app.get('/', (req, res) => {

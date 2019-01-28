@@ -6,7 +6,7 @@ import app from '../../app';
 use(chaiHttp);
 const httpRequest = request(app).keepOpen();
 
-describe('GET /', () => {
+describe('Test offices endpoints', () => {
   it('Should return the message of the base url', (done) => {
     httpRequest
       .get('/')
@@ -20,23 +20,6 @@ describe('GET /', () => {
       });
     done();
   });
-});
-
-describe('GET /api/v1', () => {
-  it('Should return version 1 welcome message', (done) => {
-    httpRequest
-      .get('/api/v1')
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        expect(res.body).to.have.property('message')
-          .to.be.equal('Welcome to Politico API VERSION 1');
-        expect(res.body).not.to.be.have.property('status');
-      });
-    done();
-  });
-});
-
-describe('GET /api/v1/offices', () => {
   it('Should return all offices', (done) => {
     httpRequest
       .get('/api/v1/offices')
@@ -48,9 +31,18 @@ describe('GET /api/v1/offices', () => {
       });
     done();
   });
-});
-
-describe('GET /api/v1/offices/1', () => {
+  it('Should return version 1 welcome message', (done) => {
+    httpRequest
+      .get('/api/v1')
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body).to.have.property('message')
+          .to.be.equal('Welcome to Politico API VERSION 1');
+        expect(res.body).to.have.property('status');
+        expect(res.body).to.have.property('data');
+      });
+    done();
+  });
   it('Should fetch One office by officeID', (done) => {
     httpRequest
       .get('/api/v1/offices/1')
@@ -62,15 +54,10 @@ describe('GET /api/v1/offices/1', () => {
       });
     done();
   });
-});
-
-
-describe('POST /api/v1/offices', () => {
   it('Should create a new Political Office', (done) => {
     const data = {
-      type: 'Presidential',
-      name: 'Presidential',
-      location: 'Nigeria'
+      type: 'Federal',
+      name: 'Presidential'
     };
     httpRequest
       .post('/api/v1/offices')
@@ -78,7 +65,7 @@ describe('POST /api/v1/offices', () => {
       .end((err, res) => {
         expect(res).to.have.status(201);
         expect(res.body).to.have.property('message')
-          .to.be.equal('Political Office Successfully Created');
+          .to.be.equal('Office Successfully Created');
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('data');
         expect(res.body).to.have.property('status');
