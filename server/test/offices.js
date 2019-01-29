@@ -25,7 +25,6 @@ describe('Test offices endpoints', () => {
       .get('/api/v1/offices')
       .end((err, res) => {
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('message');
         expect(res.body).to.have.property('data');
         expect(res.body).to.be.an('object');
       });
@@ -39,7 +38,7 @@ describe('Test offices endpoints', () => {
         expect(res.body).to.have.property('message')
           .to.be.equal('Welcome to Politico API VERSION 1');
         expect(res.body).to.have.property('status');
-        expect(res.body).to.have.property('data');
+        
       });
     done();
   });
@@ -48,7 +47,6 @@ describe('Test offices endpoints', () => {
       .get('/api/v1/offices/1')
       .end((err, res) => {
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('message');
         expect(res.body).to.have.property('data');
         expect(res.body).to.be.an('object');
       });
@@ -64,8 +62,6 @@ describe('Test offices endpoints', () => {
       .send(data)
       .end((err, res) => {
         expect(res).to.have.status(201);
-        expect(res.body).to.have.property('message')
-          .to.be.equal('Office Successfully Created');
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('data');
         expect(res.body).to.have.property('status');
