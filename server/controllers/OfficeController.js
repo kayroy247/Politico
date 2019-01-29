@@ -18,8 +18,7 @@ class OfficeController {
     offices.push(office);
     return res.status(201).json({
       status: 201,
-      data: [office],
-      message: 'Office Successfully Created'
+      data: [office]
     });
   }
 
@@ -34,8 +33,7 @@ class OfficeController {
     }
     return res.status(200).json({
       status: 200,
-      data: [office],
-      message: 'Office successfully fetched by ID'
+      data: [office]
     });
   }
 
@@ -43,8 +41,7 @@ class OfficeController {
     const allOffices = offices;
     return res.status(200).json({
       status: 200,
-      data: allOffices,
-      message: 'All Offices Successfully Fetched'
+      data: allOffices
     });
   }
 }

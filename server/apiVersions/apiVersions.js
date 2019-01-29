@@ -8,7 +8,6 @@ const apiVersion1 = Router();
 apiVersion1.get('/', (req, res) => {
   res.status(200).json({
     status: 200,
-    data: [],
     message: 'Welcome to Politico API VERSION 1'
   });
 });
