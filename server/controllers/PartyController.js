@@ -19,8 +19,7 @@ class PartyController {
     parties.push(party);
     return res.status(201).json({
       status: 201,
-      data: [party],
-      message: 'Party Successfully Created'
+      data: [party]
     });
   }
 
@@ -35,8 +34,7 @@ class PartyController {
     }
     return res.status(200).json({
       status: 200,
-      data: [party],
-      message: 'Party successfully fetched by ID'
+      data: [party]
     });
   }
 
@@ -44,8 +42,7 @@ class PartyController {
     const allParties = parties;
     return res.status(200).json({
       status: 200,
-      data: allParties,
-      message: 'All Parties Successfully Fetched'
+      data: allParties
     });
   }
 
@@ -68,8 +65,7 @@ class PartyController {
     party.name = req.body.name;
     return res.status(200).json({
       success: true,
-      data: [party],
-      message: 'Party name Successfully Edited'
+      data: [party]
     });
   }
 
@@ -86,8 +82,7 @@ class PartyController {
     parties.splice(index, 1);
     return res.status(200).json({
       status: 200,
-      data: [party],
-      message: 'Party Successfully Deleted'
+      data: [party]
     });
   }
 }
