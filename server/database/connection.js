@@ -1,8 +1,9 @@
 import '@babel/polyfill';
 import { Pool } from 'pg';
 import { config } from 'dotenv';
-import createTables from './createTables'
-// import dropTables from './dropTa
+import createTables from './createTables';
+
+
 
 config();
 
