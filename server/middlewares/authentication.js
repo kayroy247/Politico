@@ -4,6 +4,12 @@ import { config } from 'dotenv';
 config();
 
 const authenticateUser = (req, res, next) => {
+  if (!req.headers) {
+    res.status(400).json({
+      status: 400,
+      error: 'Header undefined'
+    });
+  }
   const token = req.headers['x-access'] || req.body.token || req.headers.token;
   const authHeader = req.headers.authorization;
   if (!(token || authHeader)) {

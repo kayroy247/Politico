@@ -30,4 +30,37 @@ describe('Test offices endpoints', () => {
       });
     done();
   });
+  it('Should return version 1 welcome message', (done) => {
+    httpRequest
+      .get('/api/v1/notfound')
+      .end((err, res) => {
+        expect(res).to.have.status(404);
+        expect(res.body).to.have.property('error')
+          .to.be.equal('Resource Not Found');
+        expect(res.body).to.have.property('status');
+      });
+    done();
+  });
+  it('Should return version  message', (done) => {
+    httpRequest
+      .get('/api/v1/offices')
+      .set('Authorization', 'here too')
+      .end((err, res) => {
+        expect(res).to.have.status(401);
+        expect(res.body).to.have.property('error');
+        expect(res.body).to.have.property('status');
+      });
+    done();
+  });
+  it('Should return version  message', (done) => {
+    httpRequest
+      .post('/api/v1/offices')
+      .set('Authorization', 'here too')
+      .end((err, res) => {
+        expect(res).to.have.status(401);
+        expect(res.body).to.have.property('error');
+        expect(res.body).to.have.property('status');
+      });
+    done();
+  });
 });
