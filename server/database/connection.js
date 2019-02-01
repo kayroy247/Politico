@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 import createTables from './createTables';
 
 
+
 config();
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
