@@ -8,7 +8,7 @@ import apiVersion1 from './server/apiVersions/apiVersions';
 const app = express();
 const upload = multer();
 
-app.set('port', process.env.PORT || 3000);
+const port = process.env.PORT || 5500;
 app.use(cors());
 app.use(upload.fields([]));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,7 +20,6 @@ app.use(morganLogger('combined'));
 app.get('/', (req, res) => {
   res.status(200).json({
     status: 200,
-    data: [],
     message: 'Welcome to Politico Application'
   });
 });
@@ -35,8 +34,8 @@ app.use((req, res) => {
   });
 });
 
-app.listen(app.get('port'), () => {
-  console.log(`Server running on port: ${app.get('port')} ....`);
+app.listen(port, () => {
+  console.log(`Server running on port: ${port} ....`);
 });
 
 export default app;
