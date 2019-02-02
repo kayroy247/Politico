@@ -23,7 +23,7 @@ const validateCreateUser = (input) => {
     lastname: Joi.string().trim().min(3).required(),
     email: Joi.string().email().trim().min(3)
       .required(),
-    isAdmin: Joi.string().trim().min(3),
+    isAdmin: Joi.boolean(),
     phoneNumber: Joi.string().trim().min(3).required(),
     passportURL: Joi.string().trim().min(3).required(),
     password: Joi.string().trim().min(3).required()
