@@ -35,7 +35,9 @@ class AuthController {
           });
         });
     };
-    createUser();
+    createUser().catch((err) => {
+      console.log(err);
+    });
   }
 
   static login(req, res) {
@@ -46,6 +48,13 @@ class AuthController {
     const loginUser = async () => {
       query('SELECT * FROM users WHERE email = $1', [email])
         .then((result) => {
+          if (result.rows.length < 1) {
+            return res.status(404).json({
+              status: 404,
+              error: 'The email does not exist',
+              yess: result.rows
+            });
+          }
           const { id, isadmin } = result.rows[0];
           const comparePassword = Password.comparePassword(password, result.rows[0].password);
           if (comparePassword) {
@@ -66,11 +75,13 @@ class AuthController {
           const errMessage = err.message;
           return res.status(404).json({
             status: 404,
-            error: `The email does not exist ${errMessage}`
+            error: `Unable to login user${errMessage}`
           });
         });
     };
-    loginUser();
+    loginUser().catch((err) => {
+      console.log(err);
+    });
   }
 }
 

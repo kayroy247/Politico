@@ -3,7 +3,7 @@ import { Pool } from 'pg';
 import { config } from 'dotenv';
 import createTables from './createTables';
 import password from '../helpers/passwordHash';
-import dropTables from './dropTables';
+// import dropTables from './dropTables';
 
 
 config();
@@ -17,7 +17,7 @@ const query = async (sqlQuery, values) => {
   client.release();
   return result;
 };
-const tables = `${dropTables}${createTables}`;
+const tables = `${createTables}`;
 query(tables, [])
   .catch((err) => {
     console.log(err.message);
@@ -25,11 +25,9 @@ query(tables, [])
 
 (async () => {
   const hashedPassword = await password.hashPassword('password');
-  await query('SELECT * from users where email = $1', ['okunladekayode@gmail.com'])
+  await query('SELECT * FROM users WHERE email = $1', ['okunladekayode@gmail'])
     .then((result) => {
-
-      if (result.rowCount < 1) {
-
+      if (result.rows.length < 1) {
         query('INSERT INTO users(firstname, lastname, email, password, phone_number, isadmin, passport_url) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', ['kayode', 'okunlade', 'okunladekayode@gmail', hashedPassword, '09094906949', true, 'http://a.com']);
       }
     }).catch((err) => { console.log(err); });

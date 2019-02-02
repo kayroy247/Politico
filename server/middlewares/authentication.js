@@ -5,7 +5,7 @@ config();
 
 const authenticateUser = (req, res, next) => {
   if (!req.headers) {
-    res.status(400).json({
+    return res.status(400).json({
       status: 400,
       error: 'Header undefined'
     });
@@ -13,7 +13,7 @@ const authenticateUser = (req, res, next) => {
   const token = req.headers['x-access'] || req.body.token || req.headers.token;
   const authHeader = req.headers.authorization;
   if (!(token || authHeader)) {
-    res.status(401).json({
+    return res.status(401).json({
       status: 401,
       error: 'Authentication failed, empty token'
     });
@@ -24,7 +24,7 @@ const authenticateUser = (req, res, next) => {
 
     jwt.verify(userToken, process.env.JWT_KEY, (err, decoded) => {
       if (err) {
-        res.status(401).json({
+        return res.status(401).json({
           status: 401,
           error: 'Auth Failed Due To Invalid Token',
           erro: err.message
@@ -35,7 +35,7 @@ const authenticateUser = (req, res, next) => {
       return next();
     });
   } else {
-    res.status(401).json({
+    return res.status(401).json({
       status: 401,
       error: 'Please supply authorization header token with the word "Bearer" preceeding it, separted by an empty space'
     });
@@ -44,10 +44,16 @@ const authenticateUser = (req, res, next) => {
 };
 
 const authenticateAdmin = (req, res, next) => {
+  if (!req.headers) {
+    return res.status(400).json({
+      status: 400,
+      error: 'Header undefined'
+    });
+  }
   const token = req.headers['x-access'] || req.body.token || req.headers.token;
   const authHeader = req.headers.authorization;
   if (!(token || authHeader)) {
-    res.status(401).json({
+    return res.status(401).json({
       status: 401,
       error: 'Authentication failed, empty token'
     });
@@ -57,7 +63,7 @@ const authenticateAdmin = (req, res, next) => {
     const userToken = authToken || token;
     jwt.verify(userToken, process.env.JWT_KEY, (err, decoded) => {
       if (err) {
-        res.status(401).json({
+        return res.status(401).json({
           status: 401,
           error: 'Auth Failed Due To Invalid Token',
           erro: err.message
@@ -65,15 +71,15 @@ const authenticateAdmin = (req, res, next) => {
       }
       req.body.decoded = decoded;
       if (!decoded.isadmin) {
-        res.status(403).json({
+        return res.status(403).json({
           status: 403,
           error: 'Auth failed, User not authorized'
         });
       }
-      next();
+      return next();
     });
   } else {
-    res.status(401).json({
+    return res.status(401).json({
       status: 401,
       error: 'Please supply authorization header token with the word "Bearer" preceeding it, separted by an empty space'
     });
