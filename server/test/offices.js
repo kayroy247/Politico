@@ -4,11 +4,11 @@ import chaiHttp from 'chai-http';
 import app from '../../app';
 
 use(chaiHttp);
-const httpRequest = request(app).keepOpen();
+
 
 describe('Test offices endpoints', () => {
   it('Should return the message of the base url', (done) => {
-    httpRequest
+    request(app)
       .get('/')
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -20,7 +20,7 @@ describe('Test offices endpoints', () => {
     done();
   });
   it('Should return version 1 welcome message', (done) => {
-    httpRequest
+    request(app)
       .get('/api/v1')
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -31,7 +31,7 @@ describe('Test offices endpoints', () => {
     done();
   });
   it('Should return version 1 welcome message', (done) => {
-    httpRequest
+    request(app)
       .get('/api/v1/notfound')
       .end((err, res) => {
         expect(res).to.have.status(404);
@@ -42,7 +42,7 @@ describe('Test offices endpoints', () => {
     done();
   });
   it('Should return version  message', (done) => {
-    httpRequest
+    request(app)
       .get('/api/v1/offices')
       .set('Authorization', 'here too')
       .end((err, res) => {
@@ -53,7 +53,7 @@ describe('Test offices endpoints', () => {
     done();
   });
   it('Should return version  message', (done) => {
-    httpRequest
+    request(app)
       .post('/api/v1/offices')
       .set('Authorization', 'here too')
       .end((err, res) => {
