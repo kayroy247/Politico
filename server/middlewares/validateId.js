@@ -22,8 +22,8 @@ const checkPartyId = (req, res, next) => {
 };
 
 const checkUserId = (req, res, next) => {
-  const { partyId } = req.params;
-  if (!/^[1-9]+[0-9]*$/.test(partyId)) {
+  const { userId } = req.params;
+  if (!/^[1-9]+[0-9]*$/.test(userId)) {
     res.status(400).json({
       status: 400,
       error: 'User id should be a positive integer from 1'

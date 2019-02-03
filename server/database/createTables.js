@@ -6,7 +6,7 @@ const users = `
     email VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,
     phone_number VARCHAR(30) NOT NULL,
-    passport_url VARCHAR(100) NOT NULL,
+    passport_url VARCHAR(100) DEFAULT 'http://com.com' NOT NULL,
     isadmin BOOLEAN DEFAULT false NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
@@ -36,22 +36,24 @@ const offices = `
 
 const candidates = `
   CREATE TABLE IF NOT EXISTS candidates(
-    id SERIAL PRIMARY KEY NOT NULL,
-    office INTEGER NOT NULL,
-    party INTEGER NOT NULL,
-    candidte INTEGER NOT NULL,
+    id SERIAL NOT NULL,
+    office INTEGER NOT NULL REFERENCES offices (id),
+    party INTEGER NOT NULL REFERENCES parties (id) ON DELETE CASCADE,
+    candidate INTEGER NOT NULL REFERENCES users (id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+    PRIMARY KEY (candidate, office)
   );
 `;
 
 const votes = `
   CREATE TABLE IF NOT EXISTS votes(
-    id SERIAL PRIMARY KEY NOT NULL,
+    id SERIAL NOT NULL,
+    office INTEGER NOT NULL REFERENCES offices (id),
+    candidate INTEGER NOT NULL REFERENCES users (id),
+    voter INTEGER NOT NULL REFERENCES users (id),
     created_on TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
-    created_by INTEGER NOT NULL,
-    office INTEGER NOT NULL,
-    candidate INTEGER NOT NULL
+    PRIMARY KEY (office, voter)
   );
 `;
 const createTables = `${users}${parties}${offices}${candidates}${votes}`;

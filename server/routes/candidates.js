@@ -5,13 +5,13 @@ import auth from '../middlewares/authentication';
 
 const router = Router();
 
-router.get('/:officeId/results',
+router.get('/:officeId/result',
   auth.authenticateUser,
   idCheck.checkId,
   CandidateController.getResultById);
 
 
-router.post('/userId/register',
+router.post('/:userId/register',
   auth.authenticateAdmin,
   idCheck.checkUserId,
   CandidateController.createCandidate);

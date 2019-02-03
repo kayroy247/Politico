@@ -26,12 +26,11 @@ const authenticateUser = (req, res, next) => {
       if (err) {
         return res.status(401).json({
           status: 401,
-          error: 'Auth Failed Due To Invalid Token',
-          erro: err.message
+          error: 'Auth Failed Due To Invalid Token'
         });
       }
       // for use in other middlewares
-      req.body.decoded = decoded;
+      req.decoded = decoded;
       return next();
     });
   } else {
@@ -65,11 +64,10 @@ const authenticateAdmin = (req, res, next) => {
       if (err) {
         return res.status(401).json({
           status: 401,
-          error: 'Auth Failed Due To Invalid Token',
-          erro: err.message
+          error: 'Auth Failed Due To Invalid Token'
         });
       }
-      req.body.decoded = decoded;
+      req.decoded = decoded;
       if (!decoded.isadmin) {
         return res.status(403).json({
           status: 403,

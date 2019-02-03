@@ -10,18 +10,19 @@ class VoteController {
         error: error.details[0].message
       });
     }
-    query('INSERT INTO votes(office, candidate) VALUES ($1, $2) RETURNING *', [req.body.office, req.body.candidate])
+    query('INSERT INTO votes(office, candidate, voter) VALUES ($1, $2, $3) RETURNING *', [req.body.office, req.body.candidate, req.body.voter])
       .then((result) => {
-        const offices = result.rows[0];
+        const vote = result.rows[0];
         return res.status(201).json({
           status: 201,
-          data: offices
+          data: [vote]
         });
       })
       .catch((err) => {
-        res.status(409).json({
+        const errMessage = err.message;
+        return res.status(409).json({
           status: 409,
-          error: `Unable to create office: ${err}`
+          error: `Unable to create office: ${errMessage}`
         });
       });
     return true;
