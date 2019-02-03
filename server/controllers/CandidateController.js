@@ -10,7 +10,7 @@ class CandidateController {
         error: error.details[0].message
       });
     }
-    query('INSERT INTO candidates (office, party, candidate) VALUES ($1, $2, $3) RETURNING *', [req.body.office, req.body.party, req.body.candidate])
+    query('INSERT INTO candidates (office, party, candidate) VALUES ($1, $2, $3) RETURNING *', [req.body.office, req.body.party, parseInt(req.params.userId, 10)])
       .then((result) => {
         const candidate = result.rows[0];
         return res.status(201).json({
@@ -29,8 +29,7 @@ class CandidateController {
   }
 
   static getResultById(req, res) {
-    const { officeId } = req.params;
-    query('SELECT * FROM candidates WHERE id = $1', [officeId])
+    query('SELECT office, candidate, count(candidate) as result FROM votes WHERE office = $1 GROUP BY office, candidate', [parseInt(req.params.officeId, 10)])
       .then((result) => {
         if (result.rows[0] == null) {
           return res.status(400).json({
@@ -46,9 +45,9 @@ class CandidateController {
       })
       .catch((err) => {
         const errMessage = err.message;
-        return res.status(404).json({
+        return res.status(400).json({
           status: 404,
-          error: `The office with the given id does not exist ${errMessage}`
+          error: `Bad Request ${errMessage}`
         });
       });
   }

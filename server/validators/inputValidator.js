@@ -48,17 +48,17 @@ const validateLogin = (input) => {
 
 const validateCreateVote = (input) => {
   const schema = {
-    office: Joi.string().trim().required(),
-    candidate: Joi.string().trim().min(3).required()
+    office: Joi.number().required(),
+    candidate: Joi.number().required(),
+    voter: Joi.number().required()
   };
   return Joi.validate(input, schema);
 };
 
 const validateCreateCandidate = (input) => {
   const schema = {
-    office: Joi.string().trim().required(),
-    party: Joi.string().trim().required(),
-    candidate: Joi.string().trim().min(3).required()
+    office: Joi.number().required(),
+    party: Joi.number().required()
   };
   return Joi.validate(input, schema);
 };

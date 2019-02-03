@@ -51,8 +51,7 @@ class AuthController {
           if (result.rows.length < 1) {
             return res.status(404).json({
               status: 404,
-              error: 'The email does not exist',
-              yess: result.rows
+              error: 'The email does not exist'
             });
           }
           const { id, isadmin } = result.rows[0];
