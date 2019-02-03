@@ -196,7 +196,6 @@ describe('Test offices endpoints', () => {
     const res = await request(app)
       .delete('/api/v1/parties/1')
       .set('Authorization', `Bearer ${newToken}`);
-      console.log(res.body)
     expect(res).to.have.status(202);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
