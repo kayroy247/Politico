@@ -1,28 +1,33 @@
 import { Router } from 'express';
 import PartyController from '../controllers/PartyController';
 import idCheck from '../middlewares/validateId';
-import auth from '../middlewares/authentication';
+import authenticateToken from '../middlewares/authenticateToken';
+import authorizeAdmin from '../middlewares/authorizeAdmin';
 
 const router = Router();
 
-router.get('/', auth.authenticateUser,
+router.get('/', authenticateToken,
   PartyController.getAllParties);
 
 router.get('/:partyId',
-  auth.authenticateUser,
+  authenticateToken,
   idCheck.checkPartyId,
   PartyController.getPartyById);
 
 router.patch('/:partyId/name',
-  auth.authenticateAdmin,
+  authenticateToken,
+  authorizeAdmin,
   idCheck.checkPartyId,
   PartyController.EditPartyName);
 
-router.post('/', auth.authenticateAdmin,
+router.post('/',
+  authenticateToken,
+  authorizeAdmin,
   PartyController.createParty);
 
 router.delete('/:partyId',
-  auth.authenticateAdmin,
+  authenticateToken,
+  authorizeAdmin,
   idCheck.checkPartyId,
   PartyController.deletePartyById);
 

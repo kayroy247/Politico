@@ -46,7 +46,7 @@ class CandidateController {
       .catch((err) => {
         const errMessage = err.message;
         return res.status(400).json({
-          status: 404,
+          status: 400,
           error: `Bad Request ${errMessage}`
         });
       });

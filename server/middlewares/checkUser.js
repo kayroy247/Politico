@@ -5,20 +5,20 @@ const checkEmail = (req, res, next) => {
   query('SELECT * FROM users WHERE email = $1', [req.body.email])
     .then((result) => {
       if (result.rows.length > 0) {
-        res.status(409).json({
+        return res.status(409).json({
           status: 409,
           error: 'User with the email already exist'
         });
       }
+      return next();
     })
     .catch((err) => {
       console.log(err);
-      res.status(400).json({
+      return res.status(400).json({
         status: 400,
         error: 'Bad Request'
       });
     });
-  next();
 };
 
 const validateUser = (req, res, next) => {

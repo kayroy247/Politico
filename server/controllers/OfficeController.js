@@ -51,6 +51,7 @@ class OfficeController {
           error: `The office with the given id does not exist ${errMessage}`
         });
       });
+    return true;
   }
 
   static getAllOffices(req, res) {
@@ -69,6 +70,7 @@ class OfficeController {
           error: `Unable to fetch all offices ${errMessage}`
         });
       });
+    return true;
   }
 }
 

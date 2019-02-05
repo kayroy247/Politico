@@ -41,26 +41,4 @@ describe('Test offices endpoints', () => {
       });
     done();
   });
-  it('Should return version  message', (done) => {
-    request(app)
-      .get('/api/v1/offices')
-      .set('Authorization', 'here too')
-      .end((err, res) => {
-        expect(res).to.have.status(401);
-        expect(res.body).to.have.property('error');
-        expect(res.body).to.have.property('status');
-      });
-    done();
-  });
-  it('Should return version  message', (done) => {
-    request(app)
-      .post('/api/v1/offices')
-      .set('Authorization', 'here too')
-      .end((err, res) => {
-        expect(res).to.have.status(401);
-        expect(res.body).to.have.property('error');
-        expect(res.body).to.have.property('status');
-      });
-    done();
-  });
 });

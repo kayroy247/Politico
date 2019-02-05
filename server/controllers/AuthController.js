@@ -18,7 +18,7 @@ class AuthController {
     } = req.body;
     const createUser = async () => {
       const hashedPassword = await Password.hashPassword(password);
-      await query('INSERT INTO users(firstname, lastname, email, password, phone_number, isadmin, passport_url) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [firstname, lastname, email, hashedPassword, phoneNumber, isAdmin, passportURL])
+      await query('INSERT INTO users(firstname, lastname, email, password, phone_number, isadmin, passport_url) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING firstname, lastname, email, phone_number, isadmin, passport_url', [firstname, lastname, email, hashedPassword, phoneNumber, isAdmin, passportURL])
         .then((result) => {
           const jwtToken = jwt.sign({ id: result.rows[0].id, isadmin: result.rows[0].isadmin }, process.env.JWT_KEY, { expiresIn: '24h' });
           return res.status(201).json({
@@ -58,9 +58,11 @@ class AuthController {
           const comparePassword = Password.comparePassword(password, result.rows[0].password);
           if (comparePassword) {
             const jwtToken = jwt.sign({ id, isadmin }, process.env.JWT_KEY, { expiresIn: '24h' });
+            const value = result.rows[0];
+            delete value.password;
             return res.status(200).json({
               status: 200,
-              data: [result.rows[0]],
+              data: [value],
               token: jwtToken
             });
           }
