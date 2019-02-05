@@ -2,7 +2,9 @@ import express from 'express';
 import morganLogger from 'morgan';
 import cors from 'cors';
 import multer from 'multer';
+import swaggerUi from 'swagger-ui-express';
 import bodyParser from 'body-parser';
+import politicoDocument from './politicoSwagger.json';
 import apiVersion1 from './server/apiVersions/apiVersions';
 
 const app = express();
@@ -23,6 +25,7 @@ app.get('/', (req, res) => {
     message: 'Welcome to Politico Application'
   });
 });
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(politicoDocument));
 
 // api versioning
 app.use('/api/v1', apiVersion1);
