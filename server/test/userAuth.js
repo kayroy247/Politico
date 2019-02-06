@@ -5,24 +5,37 @@ import chaiHttp from 'chai-http';
 import app from '../../app';
 
 use(chaiHttp);
-let newToken;
+let userToken;
 
 describe('Test offices endpoints', () => {
+  it('Should  version  message', (done) => {
+    request(app)
+      .post('/api/v1/offices')
+      .set('Authorization', '')
+      .send({ name: 'manana' })
+      .end((err, res) => {
+        expect(res).to.have.status(401);
+        expect(res.body).to.have.property('error');
+        expect(res.body).to.have.property('status');
+      });
+    done();
+  });
+
   it('Should Create a user account', async () => {
     const data = {
       firstname: 'Olusegun',
       lastname: 'Samson',
-      email: 'samsam@gmail.com',
+      email: 'justauser@gmail.com',
       phoneNumber: '090847823733',
       password: 'password',
       passportURL: 'http://chapa.com',
-      isAdmin: true
+      isAdmin: false
     };
     const res = await request(app)
       .post('/api/v1/auth/signup')
       .set('Authorization', 'here too')
       .send(data);
-    newToken = res.body.token;
+    userToken = res.body.token;
     expect(res).to.have.status(201);
     expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
@@ -32,8 +45,8 @@ describe('Test offices endpoints', () => {
     const res = await request(app)
       .post('/api/v1/auth/login')
       .set('Authorization', 'here too')
-      .send({ email: 'okunladekayode@gmail.com', password: 'password' });
-    newToken = res.body.token;
+      .send({ email: 'justauser@gmail.com', password: 'password' });
+    userToken = res.body.token;
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
@@ -43,7 +56,7 @@ describe('Test offices endpoints', () => {
   it('Should access parties endpoint', async () => {
     const res = await request(app)
       .get('/api/v1/parties')
-      .set('Authorization', `Bearer ${newToken}`);
+      .set('Authorization', `Bearer ${userToken}`);
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
@@ -52,7 +65,7 @@ describe('Test offices endpoints', () => {
   it('Should  test offices endpoint', async () => {
     const res = await request(app)
       .get('/api/v1/offices')
-      .set('Authorization', `Bearer ${newToken}`);
+      .set('Authorization', `Bearer ${userToken}`);
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
@@ -65,46 +78,46 @@ describe('Test offices endpoints', () => {
     };
     const res = await request(app)
       .post('/api/v1/parties')
-      .set('Authorization', `Bearer ${newToken}`)
+      .set('Authorization', `Bearer ${userToken}`)
       .send(data);
 
-    expect(res).to.have.status(201);
-    expect(res.body).to.have.property('data');
+    expect(res).to.have.status(403);
+    expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });
   it('Should access parties endpoint', async () => {
     const res = await request(app)
       .get('/api/v1/parties/1')
-      .set('Authorization', `Bearer ${newToken}`);
-    expect(res).to.have.status(200);
-    expect(res.body).to.have.property('data');
+      .set('Authorization', `Bearer ${userToken}`);
+    expect(res).to.have.status(400);
+    expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });
   it('Should access parties endpoint', async () => {
     const res = await request(app)
       .get('/api/v1/parties')
-      .set('Authorization', `Bearer ${newToken}`);
+      .set('Authorization', `Bearer ${userToken}`);
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
-  it('Should Create a office', async () => {
+  it('Should Create an office', async () => {
     const data = {
       name: 'Federal',
       type: 'Presidential office'
     };
     const res = await request(app)
       .post('/api/v1/offices')
-      .set('Authorization', `Bearer ${newToken}`)
+      .set('Authorization', `Bearer ${userToken}`)
       .send(data);
-    expect(res).to.have.status(201);
-    expect(res.body).to.have.property('data');
+    expect(res).to.have.status(403);
+    expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });
   it('Should access parties endpoint', async () => {
     const res = await request(app)
       .get('/api/v1/offices/1')
-      .set('Authorization', `Bearer ${newToken}`);
+      .set('Authorization', `Bearer ${userToken}`);
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
@@ -116,27 +129,27 @@ describe('Test offices endpoints', () => {
     };
     const res = await request(app)
       .post('/api/v1/office/1/register')
-      .set('Authorization', `Bearer ${newToken}`)
+      .set('Authorization', `Bearer ${userToken}`)
       .send(data);
-    expect(res).to.have.status(201);
-    expect(res.body).to.have.property('data');
+    expect(res).to.have.status(403);
+    expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });
   it('Should vote a Candidate', async () => {
     const data = {
       office: 1,
       candidate: 1,
-      voter: 1
+      voter: 3
     };
     const res = await request(app)
       .post('/api/v1/votes')
-      .set('Authorization', `Bearer ${newToken}`)
+      .set('Authorization', `Bearer ${userToken}`)
       .send(data);
     expect(res).to.have.status(201);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
-  it('Should vote a Candidate', async () => {
+  it('Should vote his or her Candidate', async () => {
     const data = {
       office: 1,
       candidate: 1,
@@ -144,10 +157,10 @@ describe('Test offices endpoints', () => {
     };
     const res = await request(app)
       .post('/api/v1/votes')
-      .set('Authorization', `Bearer ${newToken}`)
+      .set('Authorization', `Bearer ${userToken}`)
       .send(data);
-    expect(res).to.have.status(201);
-    expect(res.body).to.have.property('data');
+    expect(res).to.have.status(409);
+    expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });
   it('A candidate should not be able to vote twice', async () => {
@@ -158,7 +171,7 @@ describe('Test offices endpoints', () => {
     };
     const res = await request(app)
       .post('/api/v1/votes')
-      .set('Authorization', `Bearer ${newToken}`)
+      .set('Authorization', `Bearer ${userToken}`)
       .send(data);
     expect(res).to.have.status(409);
     expect(res.body).to.have.property('error');
@@ -167,7 +180,7 @@ describe('Test offices endpoints', () => {
   it('Should election result of an office', async () => {
     const res = await request(app)
       .get('/api/v1/office/1/result')
-      .set('Authorization', `Bearer ${newToken}`);
+      .set('Authorization', `Bearer ${userToken}`);
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
@@ -178,18 +191,18 @@ describe('Test offices endpoints', () => {
     };
     const res = await request(app)
       .patch('/api/v1/parties/1/name')
-      .set('Authorization', `Bearer ${newToken}`)
+      .set('Authorization', `Bearer ${userToken}`)
       .send(data);
-    expect(res).to.have.status(202);
-    expect(res.body).to.have.property('data');
+    expect(res).to.have.status(403);
+    expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });
   it('Should delete a party by id', async () => {
     const res = await request(app)
       .delete('/api/v1/parties/1')
-      .set('Authorization', `Bearer ${newToken}`);
-    expect(res).to.have.status(202);
-    expect(res.body).to.have.property('data');
+      .set('Authorization', `Bearer ${userToken}`);
+    expect(res).to.have.status(403);
+    expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });
 });
