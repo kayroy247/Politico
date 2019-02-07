@@ -13,9 +13,8 @@ describe('Test offices endpoints', () => {
       .post('/api/v1/auth/login')
       .set('Authorization', 'here too')
       .send({ email: 'voterA@gmail.com', password: 'password' });
-    newToken = res.body.token;
+    newToken = res.body[0].token;
     expect(res).to.have.status(200);
-    expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
@@ -51,9 +50,8 @@ describe('Test offices endpoints', () => {
       .post('/api/v1/auth/login')
       .set('Authorization', 'here too')
       .send({ email: 'voterB@gmail.com', password: 'password' });
-    newToken = res.body.token;
+    newToken = res.body[0].token;
     expect(res).to.have.status(200);
-    expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
@@ -89,9 +87,9 @@ describe('Test offices endpoints', () => {
       .post('/api/v1/auth/login')
       .set('Authorization', 'here too')
       .send({ email: 'voterC@gmail.com', password: 'password' });
-    newToken = res.body.token;
+    newToken = res.body[0].token;
+    console.log(res.body[0].token);
     expect(res).to.have.status(200);
-    expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
