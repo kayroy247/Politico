@@ -20,7 +20,6 @@ describe('Test offices endpoints', () => {
       .set('Authorization', 'here too')
       .send(data);
     expect(res).to.have.status(201);
-    expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
@@ -37,7 +36,6 @@ describe('Test offices endpoints', () => {
       .set('Authorization', 'here too')
       .send(data);
     expect(res).to.have.status(201);
-    expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
@@ -54,7 +52,6 @@ describe('Test offices endpoints', () => {
       .set('Authorization', 'here too')
       .send(data);
     expect(res).to.have.status(201);
-    expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
@@ -71,7 +68,6 @@ describe('Test offices endpoints', () => {
       .set('Authorization', 'here too')
       .send(data);
     expect(res).to.have.status(201);
-    expect(res.body).to.have.property('token');
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
   });
@@ -88,7 +84,6 @@ describe('Test offices endpoints', () => {
       .set('Authorization', 'here too')
       .send(data);
     expect(res).to.have.status(409);
-    expect(res.body).not.to.have.property('token');
     expect(res.body).to.have.property('error');
     expect(res.body).to.have.property('status');
   });

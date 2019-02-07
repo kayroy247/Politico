@@ -18,13 +18,15 @@ class AuthController {
     if (!isAdmin) { isAdmin = false; }
     const createUser = async () => {
       const hashedPassword = await Password.hashPassword(password);
-      await query('INSERT INTO users(firstname, lastname, email, password, phone_number, isadmin) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, firstname, lastname, email, phone_number, isadmin', [firstname, lastname, email, hashedPassword, phoneNumber, isAdmin])
+      await query('INSERT INTO users(firstname, lastname, email, password, phone_number, isadmin) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, firstname, lastname, email, phone_number', [firstname, lastname, email, hashedPassword, phoneNumber, isAdmin])
         .then((result) => {
           const jwtToken = jwt.sign({ id: result.rows[0].id, isadmin: result.rows[0].isadmin }, process.env.JWT_KEY, { expiresIn: '24h' });
           return res.status(201).json({
             status: 201,
-            data: result.rows[0],
-            token: jwtToken
+            data: [{
+              token: jwtToken,
+              user: result.rows[0]
+            }]
           });
         })
         .catch((err) => {
@@ -60,10 +62,13 @@ class AuthController {
             const jwtToken = jwt.sign({ id, isadmin }, process.env.JWT_KEY, { expiresIn: '24h' });
             const value = result.rows[0];
             delete value.password;
+            delete value.isadmin;
             return res.status(200).json({
-              status: 200,
-              data: [value],
-              token: jwtToken
+              status: 201,
+              data: [{
+                token: jwtToken,
+                user: value
+              }]
             });
           }
           return res.status(401).json({
