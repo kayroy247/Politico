@@ -10,7 +10,7 @@ import apiVersion1 from './server/apiVersions/apiVersions';
 const app = express();
 const upload = multer();
 
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(upload.fields([]));
 app.use(bodyParser.urlencoded({ extended: true }));

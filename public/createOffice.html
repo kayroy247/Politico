@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
-  <div class="nav">
-        <div class="nav-header">
+        <div class="nav">
+                <div class="nav-header">
                   <div class="nav-title">
                     <a href="index.html">Politico</a>
                   </div>
@@ -25,44 +25,41 @@
                 <input type="checkbox" id="nav-check">
                 <div class="nav-links">
                   <a href="index.html">Home</a>
-                  <a href="login.html">Login</a>
-                  <a href="signup.html">SignUp</a>
+                  <a href="createParty.html">Create Party</a>
+                  <a href="createOffice.html">Create Office</a>
+                  <a href="electionResults.html">Election Results</a>
+                  <a href="adminAllParties.html">View Parties</a>
+                  <a href="index.html" >LogOut</a>
                 </div>
               </div>
               
               <section id="register">
                 <div class="formregister">
                     <form class="signup" autocomplete="on">
-                        <h2 id="signupheader">Create an Account</h2>
+                        <h2 id="signupheader">Create Political Office</h2>
                         <div>
-                            <label>Firstname:</label><br>
-                            <input type="text" placeholder="Firstname" 
-                            maxlength="40"
-                            required>
+                            <label>Office type:</label>
+                            <select name="" id="">
+                                <option value="">Select One</option>
+                              <option value="">Federal</option>
+                              <option value="">Legistlative</option>
+                              <option value="">State</option>
+                              <option value="">Local Government</option>
+                            </select>
                         </div>
                         <div>
-                            <label>Lastname:</label><br>
-                            <input type="text" placeholder="Lastname" maxlength="40">
+                            <label id="officename">Name of Office:</label><br>
+                            <input type="text" placeholder="Presidential, senatorial" maxlength="100">
                         </div>
                         <div>
-                            <label>Email:</label><br>
-                            <input type="text" placeholder="Email Address"
-                            maxlength="60">                        
-                        </div>
-                        <div>
-                            <label>Phone Number:</label><br>
-                            <input type="text" placeholder="Phone"
-                            maxlength="15">
-                        </div>
-                        <div>
-                            <label>Password</label><br>
-                            <input type="password" placeholder="Password"
-                            maxlength="40">
+                            <label>Location:</label><br>
+                            <input type="text" placeholder="Nigeria, Lagos, etc"
+                            maxlength="100">                        
                         </div>
                         
                         <div>
-                            <button class="button_1" onclick="location.href='userProfile.html'" type="submit">SignUp</button>
-                            Already have an account? <a href="login.html">Login</a>
+                            <button class="button_1" onclick="location.href='allParties.html'" type="button">Create Office</button>
+                            
                         </div>
                         
                     </form>
@@ -70,7 +67,7 @@
               </section>
               <footer>
                     <div class="container">
-                    <p>Politico, Copyright &copy; 2019.
+                    <p>Politico, Copyright &copy; 2019. 
                   </div>
                   </footer>
   

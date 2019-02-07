@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
+    <script type="text/javascript" src="./javascript/signup.js"></script>
   <div class="nav">
         <div class="nav-header">
                   <div class="nav-title">
@@ -32,36 +33,36 @@
               
               <section id="register">
                 <div class="formregister">
-                    <form class="signup" autocomplete="on">
+                    <form class="signup" method="POST" action="" id="form" autocomplete="on">
                         <h2 id="signupheader">Create an Account</h2>
                         <div>
                             <label>Firstname:</label><br>
-                            <input type="text" placeholder="Firstname" 
+                            <input type="text" id="firstname" placeholder="Firstname" 
                             maxlength="40"
                             required>
                         </div>
                         <div>
                             <label>Lastname:</label><br>
-                            <input type="text" placeholder="Lastname" maxlength="40">
+                            <input type="text" id="lastname" placeholder="Lastname" maxlength="40" required>
                         </div>
                         <div>
                             <label>Email:</label><br>
-                            <input type="text" placeholder="Email Address"
-                            maxlength="60">                        
+                            <input type="text" id="email" placeholder="Email Address"
+                            maxlength="60" required>                        
                         </div>
                         <div>
                             <label>Phone Number:</label><br>
-                            <input type="text" placeholder="Phone"
-                            maxlength="15">
+                            <input type="text" id="phoneNumber" placeholder="Phone"
+                            maxlength="15" required>
                         </div>
                         <div>
                             <label>Password</label><br>
-                            <input type="password" placeholder="Password"
-                            maxlength="40">
+                            <input type="password" id="password" placeholder="Password"
+                            maxlength="40" required>
                         </div>
                         
                         <div>
-                            <button class="button_1" onclick="location.href='userProfile.html'" type="submit">SignUp</button>
+                            <button class="button_1" type="submit">SignUp</button>
                             Already have an account? <a href="login.html">Login</a>
                         </div>
                         

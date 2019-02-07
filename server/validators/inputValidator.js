@@ -24,8 +24,8 @@ const validateCreateUser = (input) => {
     email: Joi.string().email().trim().min(3)
       .required(),
     isAdmin: Joi.boolean(),
-    phoneNumber: Joi.string().trim().min(3).required(),
-    passportURL: Joi.string().trim().min(3).required(),
+    phoneNumber: Joi.number().min(8).required(),
+    passportURL: Joi.string().trim().min(3),
     password: Joi.string().trim().min(3).required()
   };
   return Joi.validate(input, schema);
@@ -49,8 +49,7 @@ const validateLogin = (input) => {
 const validateCreateVote = (input) => {
   const schema = {
     office: Joi.number().required(),
-    candidate: Joi.number().required(),
-    voter: Joi.number().required()
+    candidate: Joi.number().required()
   };
   return Joi.validate(input, schema);
 };

@@ -3,6 +3,14 @@
     "rules": {
       "linebreak-style": ["error", "windows"],
       "no-console": "off",
-      "comma-dangle": ["error", "never"]
-    }
+      "comma-dangle": ["error", "never"],
+      "no-param-reassign": ["error", { "props": false }],
+      "no-unused-vars": ["error", { "varsIgnorePattern": "[il]yOne" }]
+    },
+    
+    "env": {
+          "browser": true,
+          "node": true
+      }
+  
 }

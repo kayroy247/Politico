@@ -1,5 +1,5 @@
 {
-	"swagger": 2,
+	"swagger": "2.0",
 	"info": {
 		"description": "defaultDescription",
 		"version": "1.0",
