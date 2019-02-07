@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
-  <div class="nav">
-        <div class="nav-header">
+        <div class="nav">
+                <div class="nav-header">
                   <div class="nav-title">
                     <a href="index.html">Politico</a>
                   </div>
@@ -33,38 +33,26 @@
               <section id="register">
                 <div class="formregister">
                     <form class="signup" autocomplete="on">
-                        <h2 id="signupheader">Create an Account</h2>
-                        <div>
-                            <label>Firstname:</label><br>
-                            <input type="text" placeholder="Firstname" 
-                            maxlength="40"
-                            required>
-                        </div>
-                        <div>
-                            <label>Lastname:</label><br>
-                            <input type="text" placeholder="Lastname" maxlength="40">
-                        </div>
+                        <h2 id="signupheader">Login</h2>
+                    
                         <div>
                             <label>Email:</label><br>
                             <input type="text" placeholder="Email Address"
                             maxlength="60">                        
                         </div>
                         <div>
-                            <label>Phone Number:</label><br>
-                            <input type="text" placeholder="Phone"
-                            maxlength="15">
-                        </div>
-                        <div>
                             <label>Password</label><br>
                             <input type="password" placeholder="Password"
-                            maxlength="40">
+                            maxlength="40"><br>
+                            Forgot password?<a href="resetPassword.html"> Reset Password</a>
                         </div>
                         
                         <div>
-                            <button class="button_1" onclick="location.href='userProfile.html'" type="submit">SignUp</button>
-                            Already have an account? <a href="login.html">Login</a>
+                            <button class="button_1" onclick="location.href='adminDashboard.html'" type="button">Login</button>
                         </div>
-                        
+                         <div>
+                        Don't have an account? <a href="signup.html">SignUp</a>
+                      </div>
                     </form>
                 </div>
               </section>
@@ -76,3 +64,4 @@
   
 </body>
 </html>
+

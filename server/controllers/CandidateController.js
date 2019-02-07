@@ -37,10 +37,9 @@ class CandidateController {
             error: 'The office with the given id does not exist'
           });
         }
-        const electionResult = result.rows[0];
         return res.status(200).json({
           status: 200,
-          data: [electionResult]
+          data: result.rows
         });
       })
       .catch((err) => {

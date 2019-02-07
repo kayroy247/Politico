@@ -12,13 +12,13 @@ class AuthController {
       lastname,
       email,
       password,
-      phoneNumber,
-      isAdmin,
-      passportURL
+      phoneNumber
     } = req.body;
+    let { isAdmin } = req.body;
+    if (!isAdmin) { isAdmin = false; }
     const createUser = async () => {
       const hashedPassword = await Password.hashPassword(password);
-      await query('INSERT INTO users(firstname, lastname, email, password, phone_number, isadmin, passport_url) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING firstname, lastname, email, phone_number, isadmin, passport_url', [firstname, lastname, email, hashedPassword, phoneNumber, isAdmin, passportURL])
+      await query('INSERT INTO users(firstname, lastname, email, password, phone_number, isadmin) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, firstname, lastname, email, phone_number, isadmin', [firstname, lastname, email, hashedPassword, phoneNumber, isAdmin])
         .then((result) => {
           const jwtToken = jwt.sign({ id: result.rows[0].id, isadmin: result.rows[0].isadmin }, process.env.JWT_KEY, { expiresIn: '24h' });
           return res.status(201).json({

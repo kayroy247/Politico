@@ -6,7 +6,7 @@ const users = `
     email VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,
     phone_number VARCHAR(30) NOT NULL,
-    passport_url VARCHAR(100) DEFAULT 'http://com.com' NOT NULL,
+    passport_url VARCHAR(100) DEFAULT 'http://we.com' NOT NULL,
     isadmin BOOLEAN DEFAULT false NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL

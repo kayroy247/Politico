@@ -10,7 +10,7 @@ class VoteController {
         error: error.details[0].message
       });
     }
-    query('INSERT INTO votes(office, candidate, voter) VALUES ($1, $2, $3) RETURNING *', [req.body.office, req.body.candidate, req.body.voter])
+    query('INSERT INTO votes(office, candidate, voter) VALUES ($1, $2, $3) RETURNING *', [req.body.office, req.body.candidate, req.decoded.id])
       .then((result) => {
         const vote = result.rows[0];
         return res.status(201).json({
@@ -19,10 +19,21 @@ class VoteController {
         });
       })
       .catch((err) => {
-        const errMessage = err.message;
+        if (err.message.includes('update on table')) {
+          return res.status(404).json({
+            status: 404,
+            error: 'Atleast one of your input does not exist'
+          });
+        }
+        if (err.message.includes('duplicate')) {
+          return res.status(409).json({
+            status: 409,
+            error: 'You can only vote once'
+          });
+        }
         return res.status(409).json({
           status: 409,
-          error: `Unable to create office: ${errMessage}`
+          error: 'Unable to create vote'
         });
       });
     return true;

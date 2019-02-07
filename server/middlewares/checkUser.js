@@ -26,7 +26,7 @@ const validateUser = (req, res, next) => {
   if (error) {
     return res.status(400).json({
       status: 400,
-      error: error.details[0].message.replace('\\', '')
+      error: error.details[0].message
     });
   }
   return next();
@@ -35,9 +35,9 @@ const validateUser = (req, res, next) => {
 const loginValidator = (req, res, next) => {
   const { error } = validators.validateLogin(req.body);
   if (error) {
-    return res.status(422).json({
-      status: 422,
-      error: error.details[0].message.replace('\\', '')
+    return res.status(400).json({
+      status: 400,
+      error: error.details[0].message
     });
   }
   return next();
