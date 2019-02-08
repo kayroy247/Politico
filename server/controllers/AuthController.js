@@ -4,8 +4,20 @@ import Password from '../helpers/passwordHash';
 import query from '../database/connection';
 
 config();
-
+/**
+ *
+ *
+ * @class AuthController
+ */
 class AuthController {
+  /**
+   *
+   *
+   * @static
+   * @param {*} req
+   * @param {*} res
+   * @memberof AuthController
+   */
   static signUp(req, res) {
     const {
       firstname,
@@ -30,10 +42,10 @@ class AuthController {
           });
         })
         .catch((err) => {
-          const errMessage = err.message;
+          console.log(err);
           return res.status(409).json({
             status: 409,
-            error: `Unable to create user account: ${errMessage}`
+            error: 'Unable to create user account'
           });
         });
     };
@@ -41,6 +53,14 @@ class AuthController {
       console.log(err);
     });
   }
+  /**
+   *
+   *
+   * @static
+   * @param {*} req
+   * @param {*} res
+   * @memberof AuthController
+   */
 
   static login(req, res) {
     const {
@@ -64,7 +84,7 @@ class AuthController {
             delete value.password;
             delete value.isadmin;
             return res.status(200).json({
-              status: 201,
+              status: 200,
               data: [{
                 token: jwtToken,
                 user: value
@@ -78,10 +98,10 @@ class AuthController {
           });
         })
         .catch((err) => {
-          const errMessage = err.message;
+          console.log(err);
           return res.status(404).json({
             status: 404,
-            error: `Unable to login user${errMessage}`
+            error: 'Unable to login user'
           });
         });
     };

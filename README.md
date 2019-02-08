@@ -8,7 +8,7 @@ Politico is an online voting system that enables citizens give their mandate to 
 This is the link to the [UI Templates](https://kayroy247.github.io/Politico/UI/index.html) on Github Pages.
 
 ### Politico Restful API on heroku
-[SendIT API](https://politico.herokuapp.com/)
+[Politico API](https://politico.herokuapp.com/)
 
 ### Project Management
 [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2239248)
