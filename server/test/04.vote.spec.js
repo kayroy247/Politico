@@ -13,7 +13,7 @@ describe('Test offices endpoints', () => {
       .post('/api/v1/auth/login')
       .set('Authorization', 'here too')
       .send({ email: 'voterA@gmail.com', password: 'password' });
-    newToken = res.body[0].token;
+    newToken = res.body.data[0].token;
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
@@ -50,7 +50,7 @@ describe('Test offices endpoints', () => {
       .post('/api/v1/auth/login')
       .set('Authorization', 'here too')
       .send({ email: 'voterB@gmail.com', password: 'password' });
-    newToken = res.body[0].token;
+    newToken = res.body.data[0].token;
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
@@ -82,13 +82,12 @@ describe('Test offices endpoints', () => {
       .to.be.equal('You can only vote once');
     expect(res.body).to.have.property('status');
   });
-  it('Should Login to get a token', async () => {
+  it('Should Login tjo get a token', async () => {
     const res = await request(app)
       .post('/api/v1/auth/login')
       .set('Authorization', 'here too')
       .send({ email: 'voterC@gmail.com', password: 'password' });
-    newToken = res.body[0].token;
-    console.log(res.body[0].token);
+    newToken = res.body.data[0].token;
     expect(res).to.have.status(200);
     expect(res.body).to.have.property('data');
     expect(res.body).to.have.property('status');
