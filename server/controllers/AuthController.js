@@ -85,6 +85,7 @@ class AuthController {
             delete value.isadmin;
             return res.status(200).json({
               status: 200,
+
               data: [{
                 token: jwtToken,
                 user: value
