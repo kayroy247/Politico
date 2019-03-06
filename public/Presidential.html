@@ -27,7 +27,7 @@
                 <div class="nav-links">
                         <a href="index.html">Home</a>
                         <a href="expressInterest.html">Express Interest</a>
-                        <a href="electionResults.html">Election Results</a>
+                        <a href="officeResult.html">Election Results</a>
                         <a href="allParties.html">View Parties</a>
                         <a href="vote.html">Vote</a>
                         <a href="index.html" >LogOut</a>
@@ -35,6 +35,7 @@
               </div>
               
               <section id="register">
+                  <span id="mainMsg"></span>
                <h1> Vote Your Presidential Candidate</h1>
                   <div class="res">
                       <table>
@@ -49,42 +50,42 @@
                           <td>1</td>
                           <td><img class="party-logo"src="images/apc.jpg" alt="pdp"></td>
                           <td>Mohammadu Buhari</td>
-                          <td><input type="checkbox" name="check" onclick="onlyOne(this)"></td>
+                          <td><input type="checkbox" name="check" value="1" onclick="onlyOne(this)"></td>
                           
                         </tr>
                         <tr>
                           <td>2</td>
                           <td><img class="party-logo" src="images/pdp.png" alt="pdp"></td>
                           <td>Atiku Abubakar</td>
-                          <td><input type="checkbox" name="check" onclick="onlyOne(this)"></td>
+                          <td><input type="checkbox" name="check" value="2" onclick="onlyOne(this)"></td>
                           
                         </tr>
                         <tr>
                                 <td>3</td>
                                 <td><img class="party-logo"src="images/apc.jpg" alt="pdp"></td>
                                 <td>Mohammadu Buhari</td>
-                                <td><input type="checkbox" name="check" onclick="onlyOne(this)"></td>
+                                <td><input type="checkbox" name="check" value="1"  onclick="onlyOne(this)"></td>
                                 
                               </tr>
                               <tr>
                                 <td>4</td>
                                 <td><img class="party-logo" src="images/pdp.png" alt="pdp"></td>
                                 <td>Atiku Abubakar</td>
-                                <td><input type="checkbox" name="check" onclick="onlyOne(this)"></td>
+                                <td><input type="checkbox" name="check" value="2"  onclick="onlyOne(this)"></td>
                                 
                               </tr>
                               <tr>
                                   <td>5</td>
                                   <td><img class="party-logo"src="images/apc.jpg" alt="pdp"></td>
                                   <td>Mohammadu Buhari</td>
-                                  <td><input type="checkbox" name="check" onclick="onlyOne(this)"></td>
+                                  <td><input type="checkbox" value="1" name="check" onclick="onlyOne(this)"></td>
                                   
                                 </tr>
                                 <tr>
                                   <td>6</td>
                                   <td><img class="party-logo" src="images/pdp.png" alt="pdp"></td>
                                   <td>Atiku Abubakar</td>
-                                  <td><input type="checkbox" name="check" onclick="onlyOne(this)"></td>
+                                  <td><input type="checkbox" name="check" value="1" onclick="onlyOne(this)"></td>
                                   
                                 </tr>
                               
@@ -92,7 +93,7 @@
                         
                       </table>
                       <div class="voteButton">
-                            <button onclick="location.href='userProfile.html'" class="button_1" type="buton">Submit Vote</button>
+                            <button class="button_1" id="submitVote"type="buton">Submit Vote</button>
                       </div>
                     </div>
               </section>
@@ -101,6 +102,6 @@
                     <p>Politico, Copyright &copy; 2019.
                   </div>
                   </footer>
-  
+                  <script type="text/javascript" src="./javascript/vote.js"></script>
 </body>
 </html>

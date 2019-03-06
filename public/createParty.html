@@ -27,7 +27,7 @@
                   <a href="index.html">Home</a>
                   <a href="createParty.html">Create Party</a>
                   <a href="createOffice.html">Create Office</a>
-                  <a href="electionResults.html">Election Results</a>
+                  <a href="officeResult.html">Election Results</a>
                   <a href="adminAllParties.html">View Parties</a>
                   <a href="index.html" >LogOut</a>
                 </div>
@@ -35,34 +35,26 @@
               
               <section id="register">
                 <div class="formregister">
-                    <form class="signup" autocomplete="on">
+                    <form class="signup" id="partyForm" autocomplete="on">
+                        <span id="mainMsg"></span>
                         <h2 id="signupheader">Register Political Party</h2>
                         <div>
                             <label>Party Name:</label><br>
-                            <input type="text" placeholder="Party Name" 
+                            <input type="text" id="partyName" placeholder="Party Name" 
                             maxlength="100"
                             required>
                         </div>
                         <div>
-                            <label>Party Acronym:</label><br>
-                            <input type="text" placeholder="Party Acronym" maxlength="10">
-                        </div>
-                        <div>
                             <label>Headquater Address:</label><br>
-                            <input type="text" placeholder="Address"
-                            maxlength="60">                        
+                            <input type="text" id="hqAddress"  placeholder="Address"
+                            maxlength="60" required>                        
                         </div>
                         <div>
-                            <label>Party Email:</label><br>
-                            <input type="email" placeholder="email"
-                            maxlength="15">
+                            <label>Party Logo:</label><br>
+                            <input type="text" id="partyLogo" name="pic" required>
                         </div>
                         <div>
-                            <label>Upload Party Logo:</label><br>
-                            <input type="file" name="pic">
-                        </div>
-                        <div>
-                            <button class="button_1" onclick="location.href='allParties.html'" type="button">Register Party</button>
+                            <button class="button_1"  type="submit">Register Party</button>
                             
                         </div>
                         
@@ -74,6 +66,6 @@
                     <p>Politico, Copyright &copy; 2019.
                   </div>
                   </footer>
-  
+                  <script type="text/javascript" src="./javascript/parties.js"></script>
 </body>
 </html>

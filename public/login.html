@@ -32,23 +32,24 @@
               
               <section id="register">
                 <div class="formregister">
-                    <form class="signup" autocomplete="on">
+                    <form class="signup" id="loginForm"autocomplete="on">
+                        <span id="mainMsg"></span>
                         <h2 id="signupheader">Login</h2>
                     
                         <div>
-                            <label>Email:</label><br>
-                            <input type="text" placeholder="Email Address"
+                            <label>Email:</label><span id="emailMsg"></span><br>
+                            <input type="text" id="email" placeholder="Email Address"
                             maxlength="60">                        
                         </div>
                         <div>
-                            <label>Password</label><br>
-                            <input type="password" placeholder="Password"
+                            <label>Password</label><span id="passMsg"></span><br>
+                            <input type="password" id="password" placeholder="Password"
                             maxlength="40"><br>
                             Forgot password?<a href="resetPassword.html"> Reset Password</a>
                         </div>
                         
                         <div>
-                            <button class="button_1" onclick="location.href='adminDashboard.html'" type="button">Login</button>
+                            <button class="button_1" type="submit">Login</button>
                         </div>
                          <div>
                         Don't have an account? <a href="signup.html">SignUp</a>
@@ -61,7 +62,7 @@
                     <p>Politico, Copyright &copy; 2019.
                   </div>
                   </footer>
-  
+                  <script type="text/javascript" src="./javascript/login.js"></script>
 </body>
 </html>
 

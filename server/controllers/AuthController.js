@@ -82,7 +82,6 @@ class AuthController {
             const jwtToken = jwt.sign({ id, isadmin }, process.env.JWT_KEY, { expiresIn: '24h' });
             const value = result.rows[0];
             delete value.password;
-            delete value.isadmin;
             return res.status(200).json({
               status: 200,
               data: [{
