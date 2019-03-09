@@ -94,6 +94,11 @@
     width: 50px;
     color: white;
     background: blueviolet;
+    cursor: pointer;
+  }
+  div.mybuttons button:hover {
+    opacity: 0.6;
+    font-weight: bold;
   }
   div.mybuttons button.button_Delete{
     background: rgb(211, 73, 73);
@@ -113,6 +118,10 @@
   
   .nav > .nav-header {
     display: inline;
+  }
+  span{
+    color: red;
+    font-style: italic;
   }
   
   .nav > .nav-header > .nav-title {

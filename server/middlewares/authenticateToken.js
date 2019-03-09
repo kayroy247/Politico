@@ -13,7 +13,7 @@ const authenticateToken = (req, res, next) => {
       error: 'Authentication failed, empty token'
     });
   }
-  if ((authHeader && authHeader.includes(' ')) || token) {
+  if ((authHeader && authHeader.includes(' ')) || (token && token.includes(' '))) {
     const [, authToken] = authHeader.split(' ');
     const userToken = authToken || token;
 

@@ -26,52 +26,38 @@
                 <div class="nav-links">
                   <a href="index.html">Home</a>
                   <a href="userProfile.html">Profile</a>
-                  <a href="electionResults.html">Election Results</a>
+                  <a href="officeResult.html">Election Results</a>
                   <a href="allParties.html">View Parties</a>
                 </div>
               </div>
               
               <section id="register">
                 <div class="formregister">
-                    <form class="signup" autocomplete="on">
+                    <form class="signup" id="candidateForm" autocomplete="on">
+                        <span id="mainMsg"></span>
                         <h2 id="signupheader">Express Interest To Run for An Office</h2>
                         <div id="space">
-                            <label>Type:</label>
-                            <select name="" id="">
-                              <option value="">Select One</option>
-                              <option value="">Federal</option>
-                              <option value="">State</option>
-                              <option value="">Local Government</option>
-                            </select>
-                        </div>
-                        <div id="space">
-                            <label>Name:</label>
+                            <label>Office:</label>
                             <select name="" id="makechange">
-                              <option value="">Select One</option>
-                              <option value="">Presidential</option>
-                              <option value="">Senatorial</option>
-                              <option value="">Governorship</option>
-                              <option value="">LG Chairman</option>
+                              <option value="0">Select One</option>
+                              <option value="1">Presidential</option>
+                              <option value="2">Senatorial</option>
+                              <option value="3">Governorship</option>
+                              <option value="4">LG Chairman</option>
                             </select>
                         </div>
                         <div id="space">
                             <label>Party:</label>
-                            <select name="" id="">
-                              <option value="">Select One</option>
-                              <option value="">Action Progressive Congress</option>
-                              <option value="">People's Democratic Party</option>
-                              <option value="">Labour Party</option>
-                              <option value="">Action Aliance</option>
+                            <select name="" id="party">
+                              <option value="0">Select One</option>
+                              <option value="1">Action Progressive Congress</option>
+                              <option value="2">People's Democratic Party</option>
+                              <option value="3">Labour Party</option>
+                              <option value="4">Action Aliance</option>
                             </select>
                         </div>
                         <div>
-                            <label>Location:</label><br>
-                            <input type="text" placeholder="Nigeria, Lagos, etc"
-                            maxlength="100">                        
-                        </div>
-                        
-                        <div>
-                            <button class="button_1" onclick="location.href='userProfile.html'" type="button">Submit</button>
+                            <button class="button_1"  type="submit">Submit</button>
                             
                         </div>
                         
@@ -83,6 +69,6 @@
                     <p>Politico, Copyright &copy; 2019.
                   </div>
                   </footer>
-  
+                  <script type="text/javascript" src="./javascript/candidates.js"></script>
 </body>
 </html>

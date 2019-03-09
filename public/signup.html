@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
-    <script type="text/javascript" src="./javascript/signup.js"></script>
   <div class="nav">
         <div class="nav-header">
                   <div class="nav-title">
@@ -33,30 +32,30 @@
               
               <section id="register">
                 <div class="formregister">
-                    <form class="signup" method="POST" action="" id="form" autocomplete="on">
+                    <form class="signup" method="POST" action="" id="form" autocomplete="on"><span id="mainMsg"></span>
                         <h2 id="signupheader">Create an Account</h2>
-                        <div>
-                            <label>Firstname:</label><br>
+                        <div> 
+                            <label>Firstname:</label><span id="fnameMsg"></span><br>
                             <input type="text" id="firstname" placeholder="Firstname" 
                             maxlength="40"
                             required>
                         </div>
                         <div>
-                            <label>Lastname:</label><br>
+                            <label>Lastname:</label><span id="lnameMsg"></span><br>
                             <input type="text" id="lastname" placeholder="Lastname" maxlength="40" required>
                         </div>
                         <div>
-                            <label>Email:</label><br>
+                            <label>Email:</label><span id="emailMsg"></span><br>
                             <input type="text" id="email" placeholder="Email Address"
                             maxlength="60" required>                        
                         </div>
                         <div>
-                            <label>Phone Number:</label><br>
+                            <label>Phone Number:</label><span id="phoneMsg"></span><br>
                             <input type="text" id="phoneNumber" placeholder="Phone"
                             maxlength="15" required>
                         </div>
                         <div>
-                            <label>Password</label><br>
+                            <label>Password</label><span id="passMsg"></span><br>
                             <input type="password" id="password" placeholder="Password"
                             maxlength="40" required>
                         </div>
@@ -74,6 +73,7 @@
                     <p>Politico, Copyright &copy; 2019.
                   </div>
                   </footer>
+                  <script type="text/javascript" src="./javascript/signup.js"></script>
   
 </body>
 </html>

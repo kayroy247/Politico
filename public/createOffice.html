@@ -27,7 +27,7 @@
                   <a href="index.html">Home</a>
                   <a href="createParty.html">Create Party</a>
                   <a href="createOffice.html">Create Office</a>
-                  <a href="electionResults.html">Election Results</a>
+                  <a href="officeResult.html">Election Results</a>
                   <a href="adminAllParties.html">View Parties</a>
                   <a href="index.html" >LogOut</a>
                 </div>
@@ -35,30 +35,25 @@
               
               <section id="register">
                 <div class="formregister">
-                    <form class="signup" autocomplete="on">
+                    <form class="signup" id="officeForm"autocomplete="on">
+                        <span id="mainMsg"></span>
                         <h2 id="signupheader">Create Political Office</h2>
                         <div>
                             <label>Office type:</label>
-                            <select name="" id="">
+                            <select name="" id="officeType">
                                 <option value="">Select One</option>
-                              <option value="">Federal</option>
-                              <option value="">Legistlative</option>
-                              <option value="">State</option>
-                              <option value="">Local Government</option>
+                              <option value="Federal">Federal</option>
+                              <option value="Legistlative">Legistlative</option>
+                              <option value="State">State</option>
+                              <option value="Local Government">Local Government</option>
                             </select>
                         </div>
                         <div>
                             <label id="officename">Name of Office:</label><br>
-                            <input type="text" placeholder="Presidential, senatorial" maxlength="100">
+                            <input type="text" id="officeName" placeholder="Presidential, senatorial" maxlength="100">
                         </div>
                         <div>
-                            <label>Location:</label><br>
-                            <input type="text" placeholder="Nigeria, Lagos, etc"
-                            maxlength="100">                        
-                        </div>
-                        
-                        <div>
-                            <button class="button_1" onclick="location.href='allParties.html'" type="button">Create Office</button>
+                            <button class="button_1" type="submit">Create Office</button>
                             
                         </div>
                         
@@ -70,6 +65,6 @@
                     <p>Politico, Copyright &copy; 2019. 
                   </div>
                   </footer>
-  
+                  <script type="text/javascript" src="./javascript/offices.js"></script>
 </body>
 </html>

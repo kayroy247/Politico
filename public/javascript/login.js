@@ -1,37 +1,30 @@
-const form = document.getElementById('form');
+const loginForm = document.getElementById('loginForm');
 
 const getUserInput = () => {
-  const firstname = document.getElementById('firstname').value.trim();
-  const lastname = document.getElementById('lastname').value.trim();
   const email = document.getElementById('email').value.trim();
-  const phoneNumber = document.getElementById('phoneNumber').value.trim();
   const password = document.getElementById('password').value.trim();
   return {
-    firstname, lastname, email, phoneNumber, password
+    email, password
   };
 };
-const url = 'http://localhost:5000/api/v1/auth/signup';
+const url = 'http://localhost:5000/api/v1/auth/login';
 
 const validateCreateUser = (user) => {
   const {
-    firstname, lastname, email, phoneNumber, password
+    email, password
   } = user;
 
   document.querySelector('#passMsg').innerHTML = '';
-  document.querySelector('#fnameMsg').innerHTML = '';
-  document.querySelector('#lnameMsg').innerHTML = '';
   document.querySelector('#emailMsg').innerHTML = '';
-  document.querySelector('#phoneMsg').innerHTML = '';
   document.querySelector('#mainMsg').innerHTML = '';
 
-  if (firstname === '' || lastname === '' || email === '' || phoneNumber === '' || password === '') {
+  if (email === '' || password === '') {
     document.querySelector('#mainMsg').innerHTML = 'Please fill all required fields';
     return true;
   }
   return true;
 };
-
-form.addEventListener('submit', async (event) => {
+loginForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const headers = new Headers();
   headers.set('Accept', 'application/json');
@@ -44,10 +37,18 @@ form.addEventListener('submit', async (event) => {
   };
   if (validateCreateUser(user)) {
     const response = await fetch(url, fetchOptions);
-    if (response.status === 201) {
+    if (response.status === 200) {
       const jsonData = await response.json();
-      window.localStorage.token = await jsonData.data[0].token;
-      window.location.replace('login.html');
+      window.localStorage.token = jsonData.data[0].token;
+      window.localStorage.userId = jsonData.data[0].user.id;
+      window.localStorage.isadmin = jsonData.data[0].user.isadmin;
+      console.log(window.localStorage.isadmin);
+      if (window.localStorage.isadmin === 'true') {
+        window.location.assign('adminDashboard.html');
+      } else {
+        window.location.assign('userProfile.html');
+      }
+      console.log(jsonData);
     }
   }
 });
